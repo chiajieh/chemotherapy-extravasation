@@ -6,6 +6,8 @@ import { AuthContext } from "./components/AuthContext";
 import NurseDashboard from "./screens/nurse/NurseDashboard";
 import PatientDashboard from "./screens/patient/PatientDashboard";
 import GeneralInformation from "./screens/patient/GeneralInformation";
+import HomeTreatment from "./screens/patient/HomeTreatment";
+import PatientAssessments from "./screens/patient/PatientAssessments";
 
 import SignInScreen from "./screens/SignInScreen";
 import SignUpScreen from "./screens/SignUpScreen";
@@ -190,6 +192,8 @@ export default function App() {
               <>
                 <Stack.Screen name="Home" component={PatientDashboard} />
                 <Stack.Screen name="GeneralInformation" component={GeneralInformation} />
+                <Stack.Screen name="HomeTreatment" component={HomeTreatment} />
+                <Stack.Screen name="PatientAssessments" component={PatientAssessments} />
               </>
             ) : (
               <></>
