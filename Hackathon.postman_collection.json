@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "fcb764af-f0cd-47f0-aced-5c31248e823f",
+		"name": "Hackathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25455941"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/nurse",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0b25yeW5lam9obkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc1NDQzNjAsImV4cCI6MTY3ODE0OTE2MH0.UKeRtsQoEHY8XMQaAfDIxGDHqCDirYVoMA96KGq6jgfR9qCB3FNtjHpvBSvEFxwF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"nellin\",\r\n    \"lastName\": \"jin\",\r\n    \"username\": \"nellin\",\r\n    \"email\":\"nellinjin@gmail.com\",\r\n    \"password\":\"nellin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/nurse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"nurse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/nurse/23",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0b25yeWpvaG5AZ21haWwuY29tIiwiaWF0IjoxNjc3NTQ0MDAyLCJleHAiOjE2NzgxNDg4MDJ9.Gn_G7AEbO-Zh8sumjwRZ-EWfzPTpwiVKN6alFLcD3NeEzV2jFIzQ6hTZ0mh4ssBK",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/nurse/23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"nurse",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/nurse",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0b25yeW5lam9obkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc1NDQzNjAsImV4cCI6MTY3ODE0OTE2MH0.UKeRtsQoEHY8XMQaAfDIxGDHqCDirYVoMA96KGq6jgfR9qCB3FNtjHpvBSvEFxwF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/nurse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"nurse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/nurse/23",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0b25yeW5lam9obkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc1NDQzNjAsImV4cCI6MTY3ODE0OTE2MH0.UKeRtsQoEHY8XMQaAfDIxGDHqCDirYVoMA96KGq6jgfR9qCB3FNtjHpvBSvEFxwF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/nurse/23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"nurse",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/patients",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0b25yeW5lam9obkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc1NDQzNjAsImV4cCI6MTY3ODE0OTE2MH0.UKeRtsQoEHY8XMQaAfDIxGDHqCDirYVoMA96KGq6jgfR9qCB3FNtjHpvBSvEFxwF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/patients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/nurse/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0b25yeW5lam9obkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc1NDQzNjAsImV4cCI6MTY3ODE0OTE2MH0.UKeRtsQoEHY8XMQaAfDIxGDHqCDirYVoMA96KGq6jgfR9qCB3FNtjHpvBSvEFxwF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"nortay\",\r\n    \"lastName\": \"jeeh\",\r\n    \"username\": \"yun\",\r\n    \"email\":\"nortayjeeh@gmail.com\",\r\n    \"password\": \"yun\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/nurse/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"nurse",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/chemotherapy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwYW1qb2huQGdtYWlsLmNvbSIsImlhdCI6MTY3NzYzODgzNSwiZXhwIjoxNjc4MjQzNjM1fQ.PIfC5axlZCW7MbayDSI-AIN38RandnULXmwpL20YetIcqI8jxiKOmmdmIweJkpgE\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/chemotherapy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"chemotherapy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/chemotherapy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwYW1qb2huQGdtYWlsLmNvbSIsImlhdCI6MTY3NzYzNzkwOSwiZXhwIjoxNjc4MjQyNzA5fQ.xUuIPIyviHyMWBnddmWzX5mQMK8hqyQLaHVneL9Qm0Ui-M4nqk8b4Wxm8Gbv0DUg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"hapa\",\r\n    \"type\": \"gahha\",\r\n    \"properties\": \"ahahh\",\r\n    \"antidote\": \"bahah\",\r\n    \"intervention\": \"ggaga\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/chemotherapy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"chemotherapy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/chemotherapy/details?name=hapa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwYW1qb2huQGdtYWlsLmNvbSIsImlhdCI6MTY3NzYzODgzNSwiZXhwIjoxNjc4MjQzNjM1fQ.PIfC5axlZCW7MbayDSI-AIN38RandnULXmwpL20YetIcqI8jxiKOmmdmIweJkpgE\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/chemotherapy/details?name=hapa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"chemotherapy",
+						"details"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "hapa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/chemotherapy/197",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwYW1qb2huQGdtYWlsLmNvbSIsImlhdCI6MTY3NzYzODgzNSwiZXhwIjoxNjc4MjQzNjM1fQ.PIfC5axlZCW7MbayDSI-AIN38RandnULXmwpL20YetIcqI8jxiKOmmdmIweJkpgE\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/chemotherapy/197",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"chemotherapy",
+						"197"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/chemotherapy/query?id=197&name=hapa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwYW1qb2huQGdtYWlsLmNvbSIsImlhdCI6MTY3NzYzODgzNSwiZXhwIjoxNjc4MjQzNjM1fQ.PIfC5axlZCW7MbayDSI-AIN38RandnULXmwpL20YetIcqI8jxiKOmmdmIweJkpgE\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/chemotherapy/query?id=197&name=hapa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"chemotherapy",
+						"query"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "197"
+						},
+						{
+							"key": "name",
+							"value": "hapa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/chemotherapy/hapa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwYW1qb2huQGdtYWlsLmNvbSIsImlhdCI6MTY3NzYzODgzNSwiZXhwIjoxNjc4MjQzNjM1fQ.PIfC5axlZCW7MbayDSI-AIN38RandnULXmwpL20YetIcqI8jxiKOmmdmIweJkpgE\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"hapa\",\r\n    \"type\": \"testing\",\r\n    \"properties\": \"testing\",\r\n    \"antidote\": \"testing\",\r\n    \"intervention\": \"testing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/chemotherapy/hapa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"chemotherapy",
+						"hapa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/chemotherapy/hapa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwYW1qb2huQGdtYWlsLmNvbSIsImlhdCI6MTY3NzYzODgzNSwiZXhwIjoxNjc4MjQzNjM1fQ.PIfC5axlZCW7MbayDSI-AIN38RandnULXmwpL20YetIcqI8jxiKOmmdmIweJkpgE\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/chemotherapy/hapa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"chemotherapy",
+						"hapa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/patients/info?username=manyj",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYW55am9obkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc3MDg5MzUsImV4cCI6MTY3ODMxMzczNX0.5pz5ASiLgSIG6OOUDor5p7GYl3nKb_da2UShHBARiejOfGXQefBU_WF8hKrV6sck",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/patients/info?username=manyj",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients",
+						"info"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "manyj"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
