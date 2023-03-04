@@ -8,10 +8,10 @@ import {
 import React from "react";
 
 const DATA = [
-  { name: "Chemotherapy: " },
-  { name: "IV Site: " },
-  { name: "Antidote: " },
-  { name: "Intervention instructions: "},
+  { name: "Chemotherapy: PACLItaxel" },
+  { name: "IV Site: Forearm" },
+  { name: "Antidote: None" },
+  { name: "Intervention instructions: Apply cold pack for 15-20 minutes at least 4 times per day for the first 24-48 hours"},
 ];
 
 export default function HomeTreatment({ navigation, onPress }) {
