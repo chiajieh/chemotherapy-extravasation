@@ -5,6 +5,7 @@ import React from "react";
 import { AuthContext } from "./components/AuthContext";
 import NurseDashboard from "./screens/nurse/NurseDashboard";
 import PatientDashboard from "./screens/patient/PatientDashboard";
+import GeneralInformation from "./screens/patient/GeneralInformation";
 
 import SignInScreen from "./screens/SignInScreen";
 import SignUpScreen from "./screens/SignUpScreen";
@@ -188,6 +189,7 @@ export default function App() {
               //  User is signed in as Patient
               <>
                 <Stack.Screen name="Home" component={PatientDashboard} />
+                <Stack.Screen name="GeneralInformation" component={GeneralInformation} />
               </>
             ) : (
               <></>
