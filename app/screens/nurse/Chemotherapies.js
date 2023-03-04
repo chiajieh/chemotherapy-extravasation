@@ -8,8 +8,7 @@ import {
   Text,
   VStack,
 } from "native-base";
-import React from "react";
-import { AuthContext } from "../../components/AuthContext";
+import React, { useEffect } from "react";
 
 const DATA = [
   {
@@ -53,8 +52,18 @@ const DATA = [
 export default function Chemotherapies({ navigation, onPress }) {
   //const { setData } = React.useContext(AuthContext);
   const [search, setSearch] = React.useState("");
-  const [searchData, setsearchData] = React.useState(DATA);
-  const { state } = React.useContext(AuthContext);
+  const [searchData, setsearchData] = React.useState([]);
+
+  useEffect(() => {
+    fetch("http://10.0.2.2:8080/api/chemotherapy", {
+      method: "GET",
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => setsearchData(data.sort((a, b) => a.name > b.name)))
+      .catch(setsearchData(DATA));
+  }, []);
 
   function defaultOnPress(item) {
     navigation.navigate("ChemotherapyInformation", {
