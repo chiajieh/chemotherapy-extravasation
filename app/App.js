@@ -13,7 +13,9 @@ import SplashScreen from "./screens/SplashScreen";
 import ChemotherapyInfoScreen from "./screens/ChemotherapyInfoScreen";
 import Chemotherapies from "./screens/nurse/Chemotherapies";
 import ExtravasationScale from "./screens/nurse/ExtravasationScale";
+import FollowUp from "./screens/nurse/FollowUp";
 import NurseFollowUps from "./screens/nurse/NurseFollowUps";
+import StartPatientPathway from "./screens/nurse/StartPatientPathway";
 
 // navigation stack
 const Stack = createStackNavigator();
@@ -168,6 +170,10 @@ export default function App() {
                   name="Extravasation Scale"
                   component={ExtravasationScale}
                 />
+                <Stack.Screen
+                  name="Patient Clinical Pathway"
+                  component={StartPatientPathway}
+                />
                 <Stack.Screen name="Follow Ups" component={NurseFollowUps} />
                 <Stack.Screen
                   name="ChemotherapyInformation"
@@ -176,6 +182,7 @@ export default function App() {
                     title: route.params.item.name,
                   })}
                 />
+                <Stack.Screen name="Follow Up" component={FollowUp} />
               </>
             ) : state.userType === "Patient" ? (
               //  User is signed in as Patient

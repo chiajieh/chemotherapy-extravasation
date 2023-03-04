@@ -5,7 +5,7 @@ import DashboardItem from "../../components/DashboardItem";
 function NurseDashboard({ navigation }) {
   return (
     <Box px={4} mt="5%" flex={1}>
-      <Heading size="md">Welcome name_placeholder</Heading>
+      <Heading size="md">Welcome Jane Doe</Heading>
       <Center>
         <VStack mt="12" space={6} alignItems="center" w="83%">
           <DashboardItem
