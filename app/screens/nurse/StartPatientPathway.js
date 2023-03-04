@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import ChemotherapyInformation from "../../components/ChemotherapyInformation";
 import InitialAssessment from "../../components/nurse/InitialAssessment";
 import ScheduleFollowUp from "../../components/nurse/ScheduleFollowUp";
+import TakePicture from "../patient/TakePicture";
 import Chemotherapies from "./Chemotherapies";
 
 const initialData = {
@@ -57,13 +58,28 @@ function StartPatientPathway({ navigation }) {
       case 3:
         return (
           <VStack>
-            <Heading pt="3" pl="3" size="lg">
-              Take Pictures
+            <Heading p="3" size="lg">
+              Take close-up picture of Extravasation
             </Heading>
+            <Box h="520">
+              <TakePicture />
+            </Box>
             {renderButtons()}
           </VStack>
         );
       case 4:
+        return (
+          <VStack>
+            <Heading p="3" size="lg">
+              Take full picture of Extravasation
+            </Heading>
+            <Box h="520">
+              <TakePicture />
+            </Box>
+            {renderButtons()}
+          </VStack>
+        );
+      case 5:
         return (
           <ScrollView>
             <Heading pt="3" pl="3" size="lg">
@@ -82,7 +98,7 @@ function StartPatientPathway({ navigation }) {
             {renderButtons()}
           </ScrollView>
         );
-      case 5:
+      case 6:
         return (
           <ScrollView>
             <Heading pt="3" pl="3" size="lg">
@@ -104,7 +120,7 @@ function StartPatientPathway({ navigation }) {
   }
 
   function handleNext() {
-    if (screenNum <= 4) {
+    if (screenNum <= 5) {
       setScreenNum((prev) => prev + 1);
     } else {
       //submit data to server
