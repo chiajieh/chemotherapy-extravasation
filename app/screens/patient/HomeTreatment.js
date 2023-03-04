@@ -8,15 +8,17 @@ import {
 import React from "react";
 
 const DATA = [
-  { name: "Extravasation: The leakage of blood, lymph, or other fluid, such as an anticancer drug, from a blood vessel or tube into the tissue around it. It is also used to describe the movement of cells out of a blood vessel into tissue during inflammation or metastasis (the spread of cancer)." },
-  { name: "Vesicant: The leakage of certain drugs called vesicants out of a vein into the tissue around it. Vesicants cause blistering and other tissue injury that may be severe and can lead to tissue necrosis (tissue death)." },
+  { name: "Chemotherapy: " },
+  { name: "IV Site: " },
+  { name: "Antidote: " },
+  { name: "Intervention instructions: "},
 ];
 
-export default function GeneralInformation({ navigation, onPress }) {
+export default function HomeTreatment({ navigation, onPress }) {
   const [Data, setData] = React.useState(DATA);
 
   function defaultOnPress(item) {
-    navigation.navigate("GeneralInformation", {
+    navigation.navigate("HomeTreatment", {
       name: item.name,
     });
   }
