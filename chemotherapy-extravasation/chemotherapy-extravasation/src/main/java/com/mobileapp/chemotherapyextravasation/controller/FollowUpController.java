@@ -7,6 +7,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -50,7 +51,7 @@ public class FollowUpController {
 
     // Put mapping to update a follow up by appointment id for patient
     @PreAuthorize("hasAnyRole('PATIENT')")
-    @GetMapping("/patient/{appointmentId}")
+    @PutMapping("/patient/{appointmentId}")
     public ResponseEntity<FollowUpDto> updatePatientFollowUpByAppointmentId(@PathVariable Long appointmentId, 
                 @RequestBody FollowUpDto followUpDto) {
         
@@ -60,7 +61,7 @@ public class FollowUpController {
 
     // Put mapping to update a follow up by appointment id for nurse
     @PreAuthorize("hasAnyRole('NURSE')")
-    @GetMapping("/nurse/{appointmentId}")
+    @PutMapping("/nurse/{appointmentId}")
     public ResponseEntity<FollowUpDto> updateNurseFollowUpByAppointmentId(@PathVariable Long appointmentId, 
                 @RequestBody FollowUpDto followUpDto) {
         
