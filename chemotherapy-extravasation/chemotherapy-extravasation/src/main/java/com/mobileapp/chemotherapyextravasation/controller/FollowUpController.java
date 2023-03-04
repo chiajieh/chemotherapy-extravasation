@@ -50,7 +50,7 @@ public class FollowUpController {
 
     // Put mapping to update a follow up by appointment id for patient
     @PreAuthorize("hasAnyRole('PATIENT')")
-    @GetMapping("/{appointmentId}")
+    @GetMapping("/patient/{appointmentId}")
     public ResponseEntity<FollowUpDto> updatePatientFollowUpByAppointmentId(@PathVariable Long appointmentId, 
                 @RequestBody FollowUpDto followUpDto) {
         
@@ -60,7 +60,7 @@ public class FollowUpController {
 
     // Put mapping to update a follow up by appointment id for nurse
     @PreAuthorize("hasAnyRole('NURSE')")
-    @GetMapping("/{appointmentId}")
+    @GetMapping("/nurse/{appointmentId}")
     public ResponseEntity<FollowUpDto> updateNurseFollowUpByAppointmentId(@PathVariable Long appointmentId, 
                 @RequestBody FollowUpDto followUpDto) {
         
