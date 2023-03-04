@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import ChemotherapyInformation from "../../components/ChemotherapyInformation";
 import InitialAssessment from "../../components/nurse/InitialAssessment";
 import ScheduleFollowUp from "../../components/nurse/ScheduleFollowUp";
-import TakePicture from "../patient/TakePicture";
+import TakePicture from "../../components/TakePicture";
 import Chemotherapies from "./Chemotherapies";
 
 const initialData = {
