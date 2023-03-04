@@ -11,6 +11,8 @@ import {
   Input
 } from "native-base";
 
+import TakePicture from "../../components/TakePicture";
+
 const initialData = {
   assessments: ["2022-01-01", "2022-02-01", "2022-03-01", "2022-04-01", "2022-05-01", "2022-06-01", "2022-07-01"],
   selectedAssessments: "",
@@ -85,23 +87,27 @@ function PatientAssessments() {
           </VStack>
         );
         case 3:
-          return (
-            <VStack>
-              <Heading>
-              Take close-up of Extravasation
+            return (
+                <VStack px={1} mt="5%">
+                  <Heading pt="2" pl="5" size="sm">
+                  Take close-up of Extravasation
+                  </Heading>
+                  <TakePicture mt="10"/>
+                  <Text mt="450"></Text>
+                  {renderButtons() }
+                </VStack>
+              );
+      case 4:
+        return (
+            <VStack px={1} mt="5%">
+              <Heading pt="2" pl="5" size="sm">
+              Take full-shot of Extravasation
               </Heading>
+              <TakePicture mt="10"/>
+              <Text mt="450"></Text>
               {renderButtons() }
             </VStack>
           );
-      case 4:
-        return (
-          <VStack>
-            <Heading>
-            Take wide-shot of Extravasation
-            </Heading>
-            {renderButtons() }
-          </VStack>
-        );
       case 5:
         return (
           <VStack px={4} mt="5%">
