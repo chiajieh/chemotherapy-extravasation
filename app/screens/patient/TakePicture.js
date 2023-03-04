@@ -40,7 +40,7 @@ function TakePicture() {
           top: 430,
           left: 20,
           borderRadius: 50,
-          backgroundColor: "#fff",
+          backgroundColor: "#00bfff",
           padding: 15,
         }}
         onPress={async () => {
@@ -60,7 +60,7 @@ function TakePicture() {
           top: 430,
           right: 20,
           borderRadius: 50,
-          backgroundColor: "#fff",
+          backgroundColor: "#00bfff",
           padding: 15,
         }}
         onPress={() => {
