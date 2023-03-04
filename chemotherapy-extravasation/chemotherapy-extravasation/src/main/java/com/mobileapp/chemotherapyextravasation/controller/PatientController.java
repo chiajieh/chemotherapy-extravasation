@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class PatientController {
      * @param patient
      * @return
      */
+    @PreAuthorize("hasRole('NURSE')")
     @PostMapping
     public ResponseEntity<PatientDto> createPatient(@Valid @RequestBody PatientDto patient) {
         PatientDto savedPatient = patientService.createPatient(patient);
@@ -33,6 +35,7 @@ public class PatientController {
      * @param PatientId
      * @return
      */
+    @PreAuthorize("hasRole('NURSE')")
     @GetMapping("{id}")
     public ResponseEntity<PatientDto> getPatientById(@PathVariable("id") long PatientId) {
         PatientDto patient = patientService.getPatientById(PatientId);
@@ -45,6 +48,7 @@ public class PatientController {
      * @param email
      * @return
      */
+    @PreAuthorize("hasRole('NURSE')")
     @GetMapping("details")
     public ResponseEntity<PatientDto> getChemotherapyDetailsByEmail(@RequestParam String email) {
         List<PatientDto> patientList = patientService.getAllPatients();
@@ -62,6 +66,7 @@ public class PatientController {
      * @param username
      * @return
      */
+    @PreAuthorize("hasRole('NURSE')")
     @GetMapping("info")
     public ResponseEntity<PatientDto> getChemotherapyDetailsByUsername(@RequestParam String username) {
         List<PatientDto> patientList = patientService.getAllPatients();
@@ -78,6 +83,7 @@ public class PatientController {
      * http://localhost:8080/api/patients
      * @return
      */
+    @PreAuthorize("hasRole('NURSE')")
     @GetMapping
     public ResponseEntity<List<PatientDto>> getAllPatient() {
         List<PatientDto> patients = patientService.getAllPatients();
@@ -91,6 +97,7 @@ public class PatientController {
      * @param patient
      * @return
      */
+    @PreAuthorize("hasRole('NURSE')")
     @PutMapping("{id}")
     public ResponseEntity<PatientDto> updatePatient(@PathVariable("id") long patientId,
                                                     @RequestBody @Valid PatientDto patient) {
@@ -104,6 +111,7 @@ public class PatientController {
      * @param patientId
      * @return
      */
+    @PreAuthorize("hasRole('NURSE')")
     @DeleteMapping("{id}")
     public ResponseEntity<String> deletePatient(@PathVariable("id") long patientId) {
         patientService.deletePatient(patientId);

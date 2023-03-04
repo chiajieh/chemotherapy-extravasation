@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class NurseController {
     private NurseService nurseService;
 
     //build create Nurse Details REST API
+    @PreAuthorize("hasRole('NURSE')")
     @PostMapping
     public ResponseEntity<NurseDto> createNurse(@Valid @RequestBody NurseDto nurse) {
         NurseDto savedNurse = nurseService.createNurse(nurse);
@@ -27,6 +29,7 @@ public class NurseController {
 
     //build get nurse by id REST API
     //http://localhost:8080/api/nurse/1
+    @PreAuthorize("hasRole('NURSE')")
     @GetMapping("{id}")
     public ResponseEntity<NurseDto> getNurseById(@PathVariable("id") long NurseId) {
         NurseDto nurse = nurseService.getNurseById(NurseId);
@@ -35,6 +38,7 @@ public class NurseController {
 
     //Build Get All nurses REST API
     //http://localhost:8080/api/nurse
+    @PreAuthorize("hasRole('NURSE')")
     @GetMapping
     public ResponseEntity<List<NurseDto>> getAllNurse() {
         List<NurseDto> nurses = nurseService.getAllNurse();
@@ -43,6 +47,7 @@ public class NurseController {
 
     //Build Update nurse REST API
     //http://localhost:8080/api/nurse/1
+    @PreAuthorize("hasRole('NURSE')")
     @PutMapping("{id}")
     public ResponseEntity<NurseDto> updateNurse(@PathVariable("id") long nurseId,
                                                 @RequestBody @Valid NurseDto nurse) {
@@ -52,6 +57,7 @@ public class NurseController {
     }
 
     //Build delete nurse REST API
+    @PreAuthorize("hasRole('NURSE')")
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteNurse(@PathVariable("id") long nurseId) {
         nurseService.deleteNurse(nurseId);
