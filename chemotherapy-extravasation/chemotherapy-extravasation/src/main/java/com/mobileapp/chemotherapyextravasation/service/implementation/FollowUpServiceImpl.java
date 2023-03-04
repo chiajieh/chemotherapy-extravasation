@@ -1,5 +1,6 @@
 package com.mobileapp.chemotherapyextravasation.service.implementation;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
@@ -79,6 +80,79 @@ public class FollowUpServiceImpl implements FollowUpService {
 
         // Return the follow up dto
         return modelMapper.map(followUp, FollowUpDto.class);
+    }
+
+    @Override
+    public FollowUpDto updatePatientFollowUpByAppointmentId(Long appointmentId, FollowUpDto followUpDto) {
+        
+        // Check that the appointment exists
+        Optional<Appointment> optionalAppointment = appointmentRepository.findById(appointmentId);
+        if (!optionalAppointment.isPresent()) {
+            throw new ResourceNotFoundException("Appointment", "id", appointmentId);
+        }
+
+        // CHeck if the follow up exists
+        Optional<FollowUp> optionalFollowUp = followUpRepository.findByAppointmentId(appointmentId);
+        if (optionalFollowUp.isPresent()) {
+            throw new ChemotherapyExtravasationAPIException("Follow up with appointment id " + appointmentId + " already exists.");
+        }
+
+        // Get the follow up from database
+        FollowUp followUpInDb = followUpRepository.findByAppointmentId(appointmentId).get();
+
+        // Update body photo if it exists
+        if (followUpDto.getBodyPartPhoto().length != 0) {
+            followUpInDb.setBodyPartPhoto(followUpDto.getBodyPartPhoto());
+            followUpInDb.setDateTaken(LocalDate.now());
+        }
+
+        // Update close up photo if it exists
+        if (followUpDto.getCloseUpPhoto().length != 0) {
+            followUpInDb.setCloseUpPhoto(followUpDto.getCloseUpPhoto());
+            followUpInDb.setDateTaken(LocalDate.now());
+        }
+
+        // Save updated follow up
+        followUpRepository.save(followUpInDb);
+
+        // Map updated follow up to dto and return
+        return modelMapper.map(followUpInDb, FollowUpDto.class);
+
+    }
+
+    @Override
+    public FollowUpDto updateNurseFollowUpByAppointmentId(Long appointmentId, FollowUpDto followUpDto) {
+        
+        // Check that the appointment exists
+        Optional<Appointment> optionalAppointment = appointmentRepository.findById(appointmentId);
+        if (!optionalAppointment.isPresent()) {
+            throw new ResourceNotFoundException("Appointment", "id", appointmentId);
+        }
+
+        // CHeck if the follow up exists
+        Optional<FollowUp> optionalFollowUp = followUpRepository.findByAppointmentId(appointmentId);
+        if (optionalFollowUp.isPresent()) {
+            throw new ChemotherapyExtravasationAPIException("Follow up with appointment id " + appointmentId + " already exists.");
+        }
+
+        // Get the follow up from database
+        FollowUp followUpInDb = followUpRepository.findByAppointmentId(appointmentId).get();
+
+        if (followUpDto.getReviewStatus() != null) {
+            followUpInDb.setReviewStatus(followUpDto.getReviewStatus());
+        }
+        if (followUpDto.getAdditionalInfo() != null) {
+            followUpInDb.setAdditionalInfo(followUpDto.getAdditionalInfo());
+        }
+        if (followUpDto.getActionRequired() != null) {
+            followUpInDb.setActionRequired(followUpDto.getActionRequired());
+        }
+
+        // Save updated follow up
+        followUpRepository.save(followUpInDb);
+
+        // Map updated follow up to dto and return
+        return modelMapper.map(followUpInDb, FollowUpDto.class);
     }
     
 

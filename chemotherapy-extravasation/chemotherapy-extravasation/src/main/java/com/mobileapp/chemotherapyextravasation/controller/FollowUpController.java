@@ -48,7 +48,25 @@ public class FollowUpController {
         return new ResponseEntity<>(newFollowUp, HttpStatus.CREATED);
     }
 
-    // Put mapping to update a follow up by appointment id
+    // Put mapping to update a follow up by appointment id for patient
+    @PreAuthorize("hasAnyRole('PATIENT')")
+    @GetMapping("/{appointmentId}")
+    public ResponseEntity<FollowUpDto> updatePatientFollowUpByAppointmentId(@PathVariable Long appointmentId, 
+                @RequestBody FollowUpDto followUpDto) {
+        
+        FollowUpDto updatedFollowUp = followUpService.updatePatientFollowUpByAppointmentId(appointmentId, followUpDto);
+        return new ResponseEntity<>(updatedFollowUp, HttpStatus.OK);
+    }
+
+    // Put mapping to update a follow up by appointment id for nurse
+    @PreAuthorize("hasAnyRole('NURSE')")
+    @GetMapping("/{appointmentId}")
+    public ResponseEntity<FollowUpDto> updateNurseFollowUpByAppointmentId(@PathVariable Long appointmentId, 
+                @RequestBody FollowUpDto followUpDto) {
+        
+        FollowUpDto updatedFollowUp = followUpService.updateNurseFollowUpByAppointmentId(appointmentId, followUpDto);
+        return new ResponseEntity<>(updatedFollowUp, HttpStatus.OK);
+    }
 
     // Delete mapping to delete a follow up by appointment id
 }
