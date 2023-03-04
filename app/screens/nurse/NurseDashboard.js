@@ -13,6 +13,21 @@ function NurseDashboard({ navigation }) {
             navigateTo="Chemotherapies"
             navigation={navigation}
           />
+          <DashboardItem
+            text="Extravasation Scale"
+            navigateTo="Extravasation Scale"
+            navigation={navigation}
+          />
+          <DashboardItem
+            text="Start Patient Pathway"
+            navigateTo="Patient Clinical Pathway"
+            navigation={navigation}
+          />
+          <DashboardItem
+            text="Follow Ups"
+            navigateTo="Follow Ups"
+            navigation={navigation}
+          />
         </VStack>
       </Center>
     </Box>

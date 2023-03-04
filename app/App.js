@@ -4,12 +4,16 @@ import { extendTheme, NativeBaseProvider } from "native-base";
 import React from "react";
 import { AuthContext } from "./components/AuthContext";
 import NurseDashboard from "./screens/nurse/NurseDashboard";
-
 import PatientDashboard from "./screens/patient/PatientDashboard";
 
 import SignInScreen from "./screens/SignInScreen";
 import SignUpScreen from "./screens/SignUpScreen";
 import SplashScreen from "./screens/SplashScreen";
+
+import ChemotherapyInfoScreen from "./screens/ChemotherapyInfoScreen";
+import Chemotherapies from "./screens/nurse/Chemotherapies";
+import ExtravasationScale from "./screens/nurse/ExtravasationScale";
+import NurseFollowUps from "./screens/nurse/NurseFollowUps";
 
 // navigation stack
 const Stack = createStackNavigator();
@@ -156,6 +160,22 @@ export default function App() {
               // User is signed in as Nurse
               <>
                 <Stack.Screen name="Home" component={NurseDashboard} />
+                <Stack.Screen
+                  name="Chemotherapies"
+                  component={Chemotherapies}
+                />
+                <Stack.Screen
+                  name="Extravasation Scale"
+                  component={ExtravasationScale}
+                />
+                <Stack.Screen name="Follow Ups" component={NurseFollowUps} />
+                <Stack.Screen
+                  name="ChemotherapyInformation"
+                  component={ChemotherapyInfoScreen}
+                  options={({ route }) => ({
+                    title: route.params.item.name,
+                  })}
+                />
               </>
             ) : state.userType === "Patient" ? (
               //  User is signed in as Patient
